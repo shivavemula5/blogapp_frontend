@@ -1,0 +1,317 @@
+/* Layout Styles */
+.ui{
+    box-sizing: border-box;
+}
+.footer{
+    position: relative; 
+    bottom : 0;
+    width: 100%;
+}
+
+/* Registration , Login , Reset Password And Change Password Styles */
+.loginCard , .registerCard , .resetCard , .changePasswordCard{
+    width : 25rem;
+    margin : 3rem auto;
+}
+.loginCardTitle , .registerCardTitle , .resetCardTitle , .changePasswordCardTitle{
+    text-align : center;
+    padding : .5rem; 
+}
+.loginCardButton , .registerCardButton , .resetCardButton , .changePasswordCardButton{
+    width : 100%;
+}
+.registerCard{
+    margin-bottom: 3rem;
+}
+
+/* SupportMe Styles */
+.supportMeCard{
+    width : 18rem;
+    margin : 1rem auto;
+}
+.supportMePrice{
+    display : block;
+    font-weight : bold;
+    font-size : 20px;
+}
+
+/* Home Styles */
+.applicationCards{
+    display: flex;
+}
+.applicationCard{
+    width : 16rem;
+    margin : 2rem 2rem;
+}
+.applicationButton{
+    margin : 1rem 0rem 0rem 0rem
+}
+.todoImage {
+    height: 143px;
+}
+
+/* Blog Post List Styles */
+.mainSection{
+    display: flex;
+}
+.adsSection{
+    width: 25%;
+}
+.inputStyles{
+    margin : 1rem 0rem;
+    width: 75%;
+}
+.inputButtonStyles{
+    background : #e9ecef;
+    border : none;
+    padding : 0;
+}
+.summaryAndOrderingSections{
+    display: flex;
+}
+.summarySection{
+    width:75%
+}   
+.orderingSection{
+    width: 25%;
+}
+.spinnerContainer{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+}
+
+
+/* User Comment Styles */
+.commentSection{
+    display : flex;  
+    flex-direction : row;
+    margin : 1rem 0rem;
+    border: 1px solid lightgray;
+}
+.imageAndName{
+    order:1;
+    display: flex;
+    flex-direction: column;
+}
+.userImage{
+    width  : 40px;
+    height : 40px;
+    margin : .65rem;
+}
+.userName{
+    text-align: center;
+}
+.commentArea{
+    order : 2;
+    padding : .50rem;
+}
+.commentOptions{
+    display: flex;
+}
+.options{
+    margin : 0rem 1rem 0rem 0rem;
+}
+
+/* Blog Post Detail Styles */
+.blogDetailMainSection {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 2rem auto;
+}
+.contentCard{
+    border : 1px solid white;
+}
+.contentCardHeader{
+    background-color : white;
+}
+.contentCardHeaderText{
+    font-size: 22px;
+}
+.contentCardBodyText{
+    font-size : 20px;
+    letter-spacing: .75px;
+}
+.adjustFooterSymbols{
+    display: flex;
+}
+.commentForm{
+    margin : 2rem 0rem;
+}
+
+/* Blog Post Abstract Styles */
+.blogPostCard{
+    display: flex;
+    margin : 1rem auto;
+    /* cursor : pointer; */
+}
+.bodySection {
+    width: 100%;
+}
+.bodyAndImageSections{
+    display : flex;
+    justify-content: space-between;
+}
+.cardBody{
+    padding: .750rem !important;
+}
+hr{
+    margin: .50rem 0rem !important;
+}
+.blogPostCardTitle{
+    cursor: pointer;
+}
+.miscellaneous{
+    display: flex;
+    align-items: center;
+}
+.miscellaneousMargin{
+    margin-right: .5rem;
+}
+.miscellaneousDot{
+    align-self: center;
+    margin-bottom: .5rem;
+}
+.blogPostImage{
+    height : 100%;
+    width: 200px;
+}
+.placeBlogPostImageToEnd{
+    margin-left: auto;
+}
+.likeCommentSave{
+    display: flex;
+}
+.like,.comment{
+    margin-right: 3rem;
+}
+.save{
+    margin-left:auto
+}
+.saveSection{
+    display: flex;
+    flex-direction: row;
+}
+.savedCount{
+    margin-left: .25rem;
+    font-weight: bold;
+}
+.likeCount{
+    margin-left: .25rem;
+}
+.commentCount{
+    margin-left:.25rem;
+    font-weight: bold;
+}
+/* OrderFilters Styles */
+.filterCards{
+    position: absolute;
+    width : 12rem;
+    margin : 1.25rem auto;
+}
+.filterTiles{
+    cursor: pointer;
+}
+
+/* Blog Post Create Styles */
+.blogPostCreateForm{
+    width : 50rem;
+    margin : 2rem auto;
+    padding : 1rem;
+}
+
+/* My Posts */
+.overallMyPosts{
+    display: flex;
+}
+.myBlogPostCard{
+    margin: 2rem 0rem 1rem 0rem;
+}
+.mainPosts{
+    width: 95%;
+}
+
+/* Like , Comment And Save Symbol Styles */
+.savePost ,.commentSymbol ,.likeSymbol  {
+     height : 20px;
+     width: 20px;
+     cursor: pointer;
+     display: flex;
+}
+.commentSymbolDiv{
+    display: flex;
+}
+.commentSymbolComment{
+    margin-left : .50rem;
+    padding-bottom: .25rem;
+    font-weight: bold;
+}
+.likeCount{
+    font-weight: bold;
+    margin-left : .25rem;
+}
+
+
+/* Saved Posts Section */
+.savedPostsSection , .likedPostsSection {
+    width:75%;
+    margin: auto;
+}
+
+/* Profile Section */
+.profileSection {
+    display: flex;
+    margin-top: 2rem;
+}
+.profilePostsSection { 
+    width: 75%;   
+}
+.profileImageSection {
+    width: 25%;
+}
+.profileImage {
+    height : 100px;
+    width: 100px;
+}
+.profileHeading{
+    margin-bottom: 3.5rem;
+}
+.profileName,.profileDescription{
+    margin: 1rem;
+}
+.links{
+    padding-left: 0rem !important;
+    color: black !important;
+}
+.followAndMail{
+    display: flex;
+}
+.follow{
+    margin: 0rem 1rem 0rem 1rem;
+    padding : 0rem .50rem !important;
+    font-size: 14x; 
+}
+.profileMail{
+    width: 50px;
+    height: 50px;
+}
+.following{
+    margin: 1rem;
+}
+
+/*Error Page*/
+.errorMessage{
+    margin-top: 1rem;
+}
+
+/*Blog Post Detail */
+.likeCommentDetail{
+    display: flex;
+}
+.likeSymbol{
+    margin-right:.15rem ;
+}
+.commentSymbolDiv{
+    margin-left: 2rem;
+}
