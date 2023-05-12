@@ -29,7 +29,7 @@ const AccountsApi = ({children}) => {
                 throw new Error('some error has occurred')
             }
             console.log(response)
-            const json = response.status !== 204 ? await response.json() : null
+            const json = response.status !== 204 ? await response.text() : null
             console.log(json)
             if(json && response.status===400){
                 Object.keys(json).map(key=>(
