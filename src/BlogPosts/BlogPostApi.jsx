@@ -76,14 +76,14 @@ const BlogPostApi = ({children}) => {
 
     /* Get Post =>  PUBLIC */
     const handleGetPosts = () => {
-        const path = '/api/postsummary/'
+        const path = '/api/posts/'
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }   
 
     /* Delete Post => PRIVATE */
     const handleDeletePosts = async(post) => {
-        const path = `/api/posts/${post.id}`
+        const path = `/api/posts/${post.id}/`
         const method = 'DELETE'
         const message = await Request(path,{data:null, method:method})
         if(message)
@@ -149,29 +149,29 @@ const BlogPostApi = ({children}) => {
     }
 
     /* Sorting  => PUBLIC */
-    const HandleCreatedAscending = () => {
-        const path = '/api/postsummary/orderbydateasc/'
+    const HandleCreatedAscending = (field) => {
+        const path = `/api/posts/?ordering=${field}`
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* Sorting  => PUBLIC */    
-    const HandleCreatedDescending = () => {
-        const path = '/api/postsummary/orderbydatedesc/'
+    const HandleCreatedDescending = (field) => {
+        const path = `/api/posts/?ordering=${field}`
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* Sorting  => PUBLIC */    
-    const HandleTimeRequiredAscending = () => {
-        const path = '/api/postsummary/orderbytimeasc/'
+    const HandleTimeRequiredAscending = (field) => {
+        const path = `/api/posts/?ordering=${field}`
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* Sorting  => PUBLIC */    
-    const HandleTimeRequiredDescending = () => {
-        const path = '/api/postsummary/orderbytimedesc/'
+    const HandleTimeRequiredDescending = (field) => {
+        const path = `/api/posts/?ordering=${field}`
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }

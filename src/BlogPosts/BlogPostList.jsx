@@ -27,7 +27,7 @@ const BlogPostList = () => {
 
    useEffect(() => {
        const response = async() => {
-        const {data} =  await handleGetPosts()
+        const data =  await handleGetPosts()
         if(localStorage.getItem('id')){
             const {saved} = await handleMySavedPostSummaryId()
             const {liked} = await handleMyLikedPostSummaryId()
