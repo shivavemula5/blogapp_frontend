@@ -2,7 +2,7 @@
   "name": "blogapp",
   "version": "0.1.0",
   "private": true,
-  "proxy": "blogapp-backend.herokuapp.com",
+  "proxy": "https://blogapp-backend.herokuapp.com",
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/jest-dom": "^5.16.5",
