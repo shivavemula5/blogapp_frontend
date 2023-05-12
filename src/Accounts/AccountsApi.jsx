@@ -18,7 +18,7 @@ const AccountsApi = ({children}) => {
                 method ,
                 headers : {
                     Authorization : token ? `Token ${token}` :'',
-                    mode : 'cors',
+                    mode: 'no-cors',
                     "content-type" : "application/json",
                     "X-CSRFToken" : getCookie("csrftoken"),
                 },
