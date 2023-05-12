@@ -35,7 +35,7 @@ const Register = () => {
             setConfirmPassword(e.target.value)
     }
 
-    const Register = async(e,name,email,password,conformpassword,callback=()=>(navigate('/login'))) => {
+    const Register = (e,name,email,password,conformpassword,callback=()=>(navigate('/login'))) => {
         e.preventDefault()
         handleRegister(name,email,password,conformpassword,callback)
     }   

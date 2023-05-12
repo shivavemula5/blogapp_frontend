@@ -12,12 +12,13 @@ const AccountsApi = ({children}) => {
     const [loading,setLoading] = useState(false)
 
     let Request = async(path,{data=null,method='GET'}) => {
-        console.log(path)
+        console.log(path,data)
         try{
             const response = await fetch(path,{
                 method ,
                 headers : {
                     Authorization : token ? `Token ${token}` :'',
+                    mode : 'cors',
                     "content-type" : "application/json",
                     "X-CSRFToken" : getCookie("csrftoken"),
                 },
