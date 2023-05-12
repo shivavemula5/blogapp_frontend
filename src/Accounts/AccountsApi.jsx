@@ -28,7 +28,7 @@ const AccountsApi = ({children}) => {
                 throw new Error('some error has occurred')
             }
             console.log(response)
-            const json = response.status !== 204 ? await response.text() : null
+            const json = response.status !== 204 ? await response.json() : null
             console.log(json)
             if(json && response.status===400){
                 Object.keys(json).map(key=>(
@@ -78,6 +78,7 @@ const AccountsApi = ({children}) => {
         const data = { 'email':email,'password':password }
         const method = 'POST'
         const message = await Request(path,{data:data,method:method})
+        console.log(message.auth_token)
         if(handleError(message)){
             setLoading(false)
             return 

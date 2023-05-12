@@ -4,8 +4,6 @@ import Form from 'react-bootstrap/Form'
 import { AuthTokenContext } from './AccountsApi'
 import { useNavigate } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
-import { toast } from 'react-toastify'
-import { Spinner } from 'react-bootstrap'
 
 const Login = () => {
 
@@ -23,15 +21,16 @@ const Login = () => {
             setPassword(e.target.value)
     }
 
+    const Login = async(e,email,password , callback =()=>(navigate('/profile'))) => {
+        e.preventDefault()
+        handleLogin(email,password,callback)
+    }
+
     useEffect(()=>{
         if(token)
             return navigate('/profile')
     },[])
 
-    const Login = async(e,email,password , callback =()=>{return navigate('/profile')}) => {
-        e.preventDefault()
-        handleLogin(email,password,callback)
-    }
 
     return ( 
             <Card className='loginCard'>
