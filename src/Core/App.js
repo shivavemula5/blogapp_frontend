@@ -49,7 +49,7 @@ const App = () => {
                             <Route path='/activate/:uid/:token' element={<AccountActivation/>} />
                             <Route path='/account/activation/done' element={<AccountActivationDone/>} />
                             <Route path='/resend/activation/link' element={<ResendActivationMail/>} />
-                            
+
                             <Route path='/support/me' element={<SupportMe/>} /> 
                             <Route path='/acknowledge/payment' element={<AcknowledgePayment/>} />
                             
@@ -59,6 +59,7 @@ const App = () => {
                             <Route path='/blogpost/:id/delete' element={<BlogPostDelete/>} />  
                             <Route path='/saved/posts' element={<SavedPosts/>} />
                             <Route path='/liked/posts' element={<LikedPosts/>} />  
+                            
                             <Route path='*' element={<ErrorPage/>} />
                         </Routes>
                     </Layout>
