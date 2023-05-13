@@ -6,6 +6,7 @@ import MyPosts from '../BlogPosts/MyPosts'
 import { Spinner } from 'react-bootstrap'
 import { toast } from 'react-toastify'
 import { BlogPostContext } from '../BlogPosts/BlogPostApi'
+import { useNavigate } from 'react-router-dom'
 
 const Profile = () => {
 
@@ -17,6 +18,8 @@ const Profile = () => {
     const followers = ['ram','shiva','vemula','dullu','ranjan']
     const [loading,setLoading] = useState(true)
 
+    const navigate = useNavigate()
+
     useEffect(()=>{
         const response = async() => {
             await handleProfile()
@@ -27,12 +30,12 @@ const Profile = () => {
 
     useEffect(()=>{
         const response = async() => {
-            const data = await handleMyPostSummary()
-            setMyPosts(data.data)
+            const {data} = await handleMyPostSummary()
+            setMyPosts(data)
         }
         response()
         setLoading(false)
-    },[])
+    },[data])
 
     if(loading){
         return (
@@ -50,12 +53,13 @@ const Profile = () => {
                 ))
                 setMyPosts(newPosts)
                 toast('post deleted successfully')
-                console.log(data,newPosts)
                 const postid = await handleDeletePosts(post)
                 if(postid===null){
                     setMyPosts(oldData)
                     toast('some error has occured')
+                    return
                 }
+                return navigate('/profile')
             }
             response()
        }
