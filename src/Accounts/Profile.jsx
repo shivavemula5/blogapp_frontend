@@ -9,6 +9,7 @@ const Profile = () => {
 
     const {value} = useContext(AuthTokenContext)
     const {handleProfile} = value 
+    const [data,setMyPosts] = useState([])
     const followers = ['ram','shiva','vemula','dullu','ranjan']
     const [loading,setLoading] = useState(true)
 
@@ -20,12 +21,39 @@ const Profile = () => {
         response()
     },[])
 
+    useEffect(()=>{
+        const response = async() => {
+            const {data} = await handleMyPostSummary()
+            setMyPosts(data)
+        }
+        response()
+        setLoading(false)
+    },[])
+
     if(loading){
         return (
             <div className='spinnerContainer'>
                 <Spinner className='spinner' animation="border" />
             </div>)
-    }
+        }
+
+        const handleClickDelete = (e,post) => {
+            e.preventDefault()
+            const oldData = data
+            const response = async() => {
+                const newPosts = data.filter(post =>(
+                    post.id!==postid
+                ))
+                setMyPosts(newPosts)
+                toast('post deleted successfully',)
+                const postid = await handleDeletePosts(post)
+                if(postid===null){
+                    setMyPosts(oldData)
+                    toast('some error has occured')
+                }
+            }
+            response()
+       }
 
     return ( 
         <section className='container profileSection'>
@@ -33,7 +61,7 @@ const Profile = () => {
                 <h1 className='profileHeading'>{localStorage.getItem('name')}</h1>
                 <hr/>
                 <h2>My posts</h2>
-                <MyPosts/>
+                <MyPosts handleClickDelete={handleClickDelete} data={data}/>
             </section>
             <section className='profileImageSection'>
                 <img className='profileImage' src={user} alt='user profile' />

@@ -1,49 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { BlogPostContext } from './BlogPostApi'
-import { toast } from 'react-toastify'
+import React from 'react'
 import BlogPostAbstractWithUserActions from './BlogPostAbstractWithUserActions'
-import { Spinner } from 'react-bootstrap'
 
-const MyPosts = () => {
-
-    const {values} = useContext(BlogPostContext)
-    const {handleMyPostSummary,handleDeletePosts} = values 
-    const [data,setMyPosts] = useState([])
-    const [loading,setLoading] = useState(true)
-
-    useEffect(()=>{
-        const response = async() => {
-            const {data} = await handleMyPostSummary()
-            setMyPosts(data)
-        }
-        response()
-        setLoading(false)
-    },[handleMyPostSummary])
-
-    if(loading){
-        return (
-            <div className='spinnerContainer'>
-                <Spinner className='spinner' animation="border" />
-            </div>)
-    }
-
-    const handleClickDelete = (e,post) => {
-        e.preventDefault()
-        const oldData = data
-        const response = async() => {
-            const newPosts = data.filter(post =>(
-                post.id!==postid
-            ))
-            setMyPosts(newPosts)
-            toast('post deleted successfully',)
-            const postid = await handleDeletePosts(post)
-            if(postid===null){
-                setMyPosts(oldData)
-                toast('some error has occured')
-            }
-        }
-        response()
-   }
+const MyPosts = (props) => {
+    
+    const {data , handleClickDelete} = props
 
     return ( 
         <section className='overallMyPosts'>
