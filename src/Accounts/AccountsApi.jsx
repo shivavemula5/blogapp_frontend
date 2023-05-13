@@ -12,7 +12,6 @@ const AccountsApi = ({children}) => {
     const [loading,setLoading] = useState(false)
 
     let Request = async(path,{data=null,method='GET'}) => {
-        console.log(path,data)
         try{
             const response = await fetch(path,{
                 method ,

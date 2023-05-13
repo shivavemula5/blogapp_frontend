@@ -3,7 +3,7 @@ import BlogPostAbstractWithUserActions from './BlogPostAbstractWithUserActions'
 
 const MyPosts = (props) => {
     
-    const {data , handleClickDelete} = props
+    const {data,handleClickDelete} = props
 
     return ( 
         <section className='overallMyPosts'>

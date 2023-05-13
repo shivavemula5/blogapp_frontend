@@ -32,7 +32,7 @@ const Profile = () => {
         }
         response()
         setLoading(false)
-    },[])
+    })
 
     if(loading){
         return (
