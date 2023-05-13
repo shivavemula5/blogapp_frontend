@@ -27,8 +27,8 @@ const Profile = () => {
 
     useEffect(()=>{
         const response = async() => {
-            const {data} = await handleMyPostSummary()
-            setMyPosts(data)
+            const data = await handleMyPostSummary()
+            setMyPosts(data.data)
         }
         response()
         setLoading(false)
@@ -50,7 +50,7 @@ const Profile = () => {
                 ))
                 setMyPosts(newPosts)
                 toast('post deleted successfully')
-                console.log(data)
+                console.log(data,newPosts)
                 const postid = await handleDeletePosts(post)
                 if(postid===null){
                     setMyPosts(oldData)
