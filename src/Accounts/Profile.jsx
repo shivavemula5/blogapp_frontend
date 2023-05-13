@@ -32,7 +32,7 @@ const Profile = () => {
         }
         response()
         setLoading(false)
-    })
+    },[])
 
     if(loading){
         return (
@@ -49,7 +49,8 @@ const Profile = () => {
                     post.id!==postid
                 ))
                 setMyPosts(newPosts)
-                toast('post deleted successfully',)
+                toast('post deleted successfully')
+                console.log(setMyPosts)
                 const postid = await handleDeletePosts(post)
                 if(postid===null){
                     setMyPosts(oldData)
