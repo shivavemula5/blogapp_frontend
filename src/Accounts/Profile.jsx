@@ -50,7 +50,7 @@ const Profile = () => {
                 ))
                 setMyPosts(newPosts)
                 toast('post deleted successfully')
-                console.log(setMyPosts)
+                console.log(data)
                 const postid = await handleDeletePosts(post)
                 if(postid===null){
                     setMyPosts(oldData)
