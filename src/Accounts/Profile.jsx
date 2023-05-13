@@ -14,7 +14,7 @@ const Profile = () => {
     const {handleProfile} = value 
     const {values} = useContext(BlogPostContext)
     const {handleDeletePosts,handleMyPostSummary} = values
-    const [posts,setMyPosts] = useState([])
+    const [posts,setPosts] = useState([])
     const followers = ['ram','shiva','vemula','dullu','ranjan']
     const [loading,setLoading] = useState(true)
 
@@ -31,11 +31,11 @@ const Profile = () => {
     useEffect(()=>{
         const response = async() => {
             const {data} = await handleMyPostSummary()
-            setMyPosts(data)
+            setPosts(data)
         }
         response()
         setLoading(false)
-    },[posts])
+    },[])
 
     if(loading){
         return (
@@ -48,18 +48,17 @@ const Profile = () => {
             e.preventDefault()
             const oldData = posts
             const response = async() => {
-                const newPosts = posts.filter(post =>(
-                    post.id!==postid
-                ))
-                setMyPosts(newPosts)
-                toast('post deleted successfully')
                 const postid = await handleDeletePosts(post)
+                console.log(postid)
+                const newPosts = posts.filter(post =>(
+                        post.id!==postid
+                ))
+                setPosts(newPosts)
+                toast('post deleted successfully')
                 if(postid===null){
-                    setMyPosts(oldData)
+                    setPosts(oldData)
                     toast('some error has occured')
-                    return
                 }
-                return navigate('/profile')
             }
             response()
        }

@@ -19,7 +19,7 @@ const AcknowledgePayment = () => {
                 {message}
             </h2>
         </div>
-     );
+     )
 }
  
-export default AcknowledgePayment;
+export default AcknowledgePayment

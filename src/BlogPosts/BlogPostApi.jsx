@@ -85,12 +85,13 @@ const BlogPostApi = ({children}) => {
 
     /* Delete Post => PRIVATE */
     const handleDeletePosts = async(post) => {
+        const postId = post.id
         const path = `https://blogapp-backend.herokuapp.com/api/posts/${post.id}/`
         const method = 'DELETE'
         const message = await Request(path,{data:null, method:method})
         if(message)
-            return
-        return message
+            return null
+        return postId
     }
 
     /* User Posts => PRIVATE */
