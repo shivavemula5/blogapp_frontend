@@ -116,21 +116,21 @@ const BlogPostApi = ({children}) => {
 
     /* User Saved Posts => PRIVATE */
     const handleMySavedPostSummaryId = () => {
-        const path = 'https://blogapp-3f83.onrender.com/api/my/saved/postsummary/id/'
+        const path = 'https://blogapp-backend.herokuapp.com/api/my/saved/postsummary/id/'
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }   
 
     /* User Liked Posts => PRIVATE */
     const handleMyLikedPostSummaryId = () => {
-        const path = 'https://blogapp-3f83.onrender.com/api/my/liked/postsummary/id/'
+        const path = 'https://blogapp-backend.herokuapp.com/api/my/liked/postsummary/id/'
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* Comments  PRIVATE  */
     const handlePostComments = (postid,comment) => {
-        const path = `https://blogapp-3f83.onrender.com/api/posts/${postid}/comments/`
+        const path = `https://blogapp-backend.herokuapp.com/api/posts/${postid}/comments/`
         const method = 'POST'
         const data = {'post':postid, 'comment':comment}
         return Request(path,{data:data, method:method})
@@ -138,42 +138,42 @@ const BlogPostApi = ({children}) => {
 
     /* Comments  PUBLIC */ 
     const handleGetComments = (postid) => {
-        const path = `https://blogapp-3f83.onrender.com/api/posts/${postid}/comments/`
+        const path = `https://blogapp-backend.herokuapp.com/api/posts/${postid}/comments/`
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* Sorting  => PUBLIC */
     const handleSearchByTitle = (title) => {
-        const path = `https://blogapp-3f83.onrender.com/api/posts/?search=${title}`
+        const path = `https://blogapp-backend.herokuapp.com/api/posts/?search=${title}`
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* Sorting  => PUBLIC */
     const HandleCreatedAscending = (field) => {
-        const path = `https://blogapp-3f83.onrender.com/api/posts/?ordering=${field}`
+        const path = `https://blogapp-backend.herokuapp.com/api/posts/?ordering=${field}`
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* Sorting  => PUBLIC */    
     const HandleCreatedDescending = (field) => {
-        const path = `https://blogapp-3f83.onrender.com/api/posts/?ordering=${field}`
+        const path = `https://blogapp-backend.herokuapp.com/api/posts/?ordering=${field}`
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* Sorting  => PUBLIC */    
     const HandleTimeRequiredAscending = (field) => {
-        const path = `https://blogapp-3f83.onrender.com/api/posts/?ordering=${field}`
+        const path = `https://blogapp-backend.herokuapp.com/api/posts/?ordering=${field}`
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* Sorting  => PUBLIC */    
     const HandleTimeRequiredDescending = (field) => {
-        const path = `https://blogapp-3f83.onrender.com/api/posts/?ordering=${field}`
+        const path = `https://blogapp-backend.herokuapp.com/api/posts/?ordering=${field}`
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
@@ -181,7 +181,7 @@ const BlogPostApi = ({children}) => {
     /* Handle Reactions => PRIVATE */
     const HandleSavedPosts = async(postid) => {
         const userid = localStorage.getItem('id')
-            const path = `https://blogapp-3f83.onrender.com/api/users/${userid}/saved_posts/`
+            const path = `https://blogapp-backend.herokuapp.com/api/users/${userid}/saved_posts/`
             const method = 'POST'
             const data = {"saved":true,"user":userid,"post":postid}
             const message = await Request(path,{data:data,method:method})
@@ -192,7 +192,7 @@ const BlogPostApi = ({children}) => {
     /* Handle Reactions => PRIVATE */
     const HandleLikedPosts = async(postid) => {
         const userid = localStorage.getItem('id')
-        const path = `https://blogapp-3f83.onrender.com/api/users/${userid}/liked_posts/`
+        const path = `https://blogapp-backend.herokuapp.com/api/users/${userid}/liked_posts/`
         const method = 'POST'
         const data = {"liked":true,"user":userid,"post":postid}
         const message = await Request(path,{data:data,method:method})
@@ -202,19 +202,19 @@ const BlogPostApi = ({children}) => {
 
     /*Count Reactions => PUBLIC */
     const getLikeCountForPost = (postid) => {
-        const path = `https://blogapp-3f83.onrender.com/api/getlikesforpost/${postid}/`
+        const path = `https://blogapp-backend.herokuapp.com/api/getlikesforpost/${postid}/`
         const method = 'GET'
         return Request(path,{data:null,method:method})
     }
     /*Count Reactions => PUBLIC */
     const getCommentCountForPost = (postid) => {
-        const path = `https://blogapp-3f83.onrender.com/api/getcommentsforpost/${postid}/`
+        const path = `https://blogapp-backend.herokuapp.com/api/getcommentsforpost/${postid}/`
         const method = 'GET'
         return Request(path,{data:null,method:method})
     }
     /*Count Reactions => PUBLIC */
     const getSaveCountForPost = (postid) => {
-        const path = `https://blogapp-3f83.onrender.com/api/getsavedcountforpost/${postid}/`
+        const path = `https://blogapp-backend.herokuapp.com/api/getsavedcountforpost/${postid}/`
         const method = 'GET'
         return Request(path,{data:null,method:method})
     }

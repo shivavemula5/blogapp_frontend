@@ -39,7 +39,7 @@ const SavePostSymbol = ({saved,postId}) => {
         if(postStatus && localStorage.getItem('id'))
             setPostType(savedPost)
         const response = async() => {
-            const response = await axios(`/api/getsavedcountforpost/${postId}/`)
+            const response = await axios(`https://blogapp-backend.herokuapp.com/api/getsavedcountforpost/${postId}/`)
             const {saved} = await response.data
             setSavedCount(saved)
         }

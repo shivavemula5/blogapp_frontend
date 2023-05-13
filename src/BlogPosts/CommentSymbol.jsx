@@ -8,7 +8,7 @@ const CommentSymbol= (props) => {
 
     useEffect(() => {
         const response = async() => {
-            const response = await axios(`/api/getcommentsforpost/${postId}/`)
+            const response = await axios(`https://blogapp-backend.herokuapp.com/api/getcommentsforpost/${postId}/`)
             const {comments} = await response.data
             setCommentCount(comments)
         }

@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { AuthTokenContext } from './AccountsApi'
 import Card from 'react-bootstrap/Card'
-import { Spinner } from 'react-bootstrap'
 
 const ChangePassword = () => {
 
@@ -55,7 +54,7 @@ const ChangePassword = () => {
                 </Form>
             </Card.Body>
         </Card>
-     );
+     )
 }
  
 export default ChangePassword

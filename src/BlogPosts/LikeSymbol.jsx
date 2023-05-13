@@ -42,7 +42,7 @@ const LikeSymbol = ({liked,postId}) => {
             setClassValue(fullHeart)
 
         const response = async() => {
-            const response = await axios(`/api/getlikesforpost/${postId}/`)
+            const response = await axios(`https://blogapp-backend.herokuapp.com/api/getlikesforpost/${postId}/`)
             const {likes} = await response.data
             setLikeCount(likes)
             setLoading(false)
