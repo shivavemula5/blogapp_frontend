@@ -29,10 +29,7 @@ const BlogPostAbstractWithUserActions = (props) => {
                 <Button variant='danger' onClick={(e,Posts=posts)=>handleClickDelete(e,Posts)}>Delete</Button>
             </Card.Footer>
         </Card>
-
-                        
-
-     );
+     )
 }
  
 export default BlogPostAbstractWithUserActions

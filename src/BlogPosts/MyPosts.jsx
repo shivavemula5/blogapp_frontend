@@ -29,13 +29,18 @@ const MyPosts = () => {
 
     const handleClickDelete = (e,post) => {
         e.preventDefault()
+        const oldData = data
         const response = async() => {
-            const postid = await handleDeletePosts(post)
             const newPosts = data.filter(post =>(
                 post.id!==postid
             ))
             setMyPosts(newPosts)
             toast('post deleted successfully',)
+            const postid = await handleDeletePosts(post)
+            if(postid===null){
+                setMyPosts(oldData)
+                toast('some error has occured')
+            }
         }
         response()
    }
