@@ -33,7 +33,7 @@ const App = () => {
     return ( 
         <AccountsApi>
             <BlogPostApi>
-                <BrowserRouter>
+                <BrowserRouter basename='https://blogapp-3f83.onrender.com'>
                     <Layout>
                         <Routes>
                             <Route path='' element= {<Home/>} />
