@@ -4,11 +4,15 @@ import user from '../Images/user.png'
 import mail from '../Images/mail.png'
 import MyPosts from '../BlogPosts/MyPosts'
 import { Spinner } from 'react-bootstrap'
+import { toast } from 'react-toastify'
+import { BlogPostContext } from '../BlogPosts/BlogPostApi'
 
 const Profile = () => {
 
     const {value} = useContext(AuthTokenContext)
     const {handleProfile} = value 
+    const {values} = useContext(BlogPostContext)
+    const {handleDeletePosts} = values
     const [data,setMyPosts] = useState([])
     const followers = ['ram','shiva','vemula','dullu','ranjan']
     const [loading,setLoading] = useState(true)
