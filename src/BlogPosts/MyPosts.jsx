@@ -44,11 +44,11 @@ const MyPosts = () => {
         <section className='overallMyPosts'>
             <section className='mainPosts'>
                 {
-                    data.map( (post) => (
-                        <div key={post.id}>
-                            <BlogPostAbstractWithUserActions handleClickDelete = {handleClickDelete} posts={post} />
-                        </div>
-                    ))
+                    data ? (data.map( (post) => (
+                            <div key={post.id}>
+                                <BlogPostAbstractWithUserActions handleClickDelete = {handleClickDelete} posts={post} />
+                            </div>))):
+                        <></>
                 }
             </section>
         </section>
