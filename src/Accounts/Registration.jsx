@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { AuthTokenContext } from './AccountsApi'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
 import { toast } from 'react-toastify'
 
@@ -64,7 +64,7 @@ const Register = () => {
                             <Form.Label>Confirm Password</Form.Label>
                             <Form.Control type="password" name="confirmpassword" placeholder="ConfirmPassword" onChange={(e)=>handleChange(e)} />
                         </Form.Group>
-                
+                        <Link className='resendActivation' to='/resend/activation/link'>Already registered ? resend activation link </Link>
                         <Button variant="primary" type="submit" className='registerCardButton'>
                             {createSpinner('Register')}
                         </Button>

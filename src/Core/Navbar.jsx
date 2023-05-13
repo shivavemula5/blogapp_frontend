@@ -42,6 +42,7 @@ export default function NavbarCustom() {
           {
              token ? 
               (<NavDropdown title={username} id="collasible-nav-dropdown">
+                  <NavDropdown.Item as={Link} to="/blogpost/create">New</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="/profile">Profile</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="/saved/posts">Saved </NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="/liked/posts">Liked </NavDropdown.Item>

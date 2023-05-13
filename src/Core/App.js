@@ -42,10 +42,10 @@ const App = () => {
                             <Route path='/login' element={<Login />} />
                             <Route path='/logout' element={<Logout />} />
                             <Route path='/profile' element={<PrivateRoute><Profile/></PrivateRoute>} />
-                            <Route path='/password/reset' element={<PrivateRoute><ResetPassword/></PrivateRoute>} />
-                            <Route path='/password/reset/confirm/:uid/:token' element={<PrivateRoute><ResetPasswordConfirm/> </PrivateRoute>}/>
-                            <Route path='/password/reset/done' element={<PrivateRoute><ResetPasswordDone/></PrivateRoute> } />
-                            <Route path='/password/change' element={<PrivateRoute><ChangePassword/> </PrivateRoute>} />
+                            <Route path='/password/reset' element={<ResetPassword/>} />
+                            <Route path='/password/reset/confirm/:uid/:token' element={<ResetPasswordConfirm/>}/>
+                            <Route path='/password/reset/done' element={<ResetPasswordDone/>} />
+                            <Route path='/password/change' element={<PrivateRoute><ChangePassword/></PrivateRoute>} />
                             <Route path='/activate/:uid/:token' element={<AccountActivation/>} />
                             <Route path='/account/activation/done' element={<AccountActivationDone/>} />
                             <Route path='/resend/activation/link' element={<ResendActivationMail/>} />

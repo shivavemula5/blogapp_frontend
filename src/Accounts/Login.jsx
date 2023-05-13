@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { AuthTokenContext } from './AccountsApi'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
 
 const Login = () => {
@@ -46,6 +46,8 @@ const Login = () => {
                             <Form.Label>Password</Form.Label>
                             <Form.Control type="password" placeholder="Password" name="password" onChange={(e)=>handleChange(e)} required />
                         </Form.Group>
+
+                        <Link to='/password/reset' className='resetPassword'>Reset password</Link>
 
                         <Button variant="primary" className='loginCardButton' type="submit">
                             {createSpinner('Login')}

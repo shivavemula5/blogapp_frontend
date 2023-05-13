@@ -23,6 +23,23 @@
 .registerCard{
     margin-bottom: 3rem;
 }
+.resendActivation{
+    text-decoration: none;
+}
+.resendActivation:hover{
+    color: black;
+    text-decoration: underline;
+}
+.resetPassword{
+    text-decoration: none;
+}
+.resetPassword:hover{
+    color: black;
+    text-decoration: underline;
+}
+.registerCardButton,.loginCardButton{
+    margin-top: 1rem;
+}
 
 /* SupportMe Styles */
 .supportMeCard{
