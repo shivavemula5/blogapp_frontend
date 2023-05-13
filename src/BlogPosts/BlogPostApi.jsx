@@ -95,7 +95,7 @@ const BlogPostApi = ({children}) => {
 
     /* User Posts => PRIVATE */
     const handleMyPostSummary = () => {
-        const path = 'https://blogapp-backend.herokuapp.comapi/my/postsummary/'
+        const path = 'https://blogapp-backend.herokuapp.com/api/my/postsummary/'
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
