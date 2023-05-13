@@ -12,7 +12,7 @@ const Profile = () => {
     const {value} = useContext(AuthTokenContext)
     const {handleProfile} = value 
     const {values} = useContext(BlogPostContext)
-    const {handleDeletePosts} = values
+    const {handleDeletePosts,handleMyPostSummary} = values
     const [data,setMyPosts] = useState([])
     const followers = ['ram','shiva','vemula','dullu','ranjan']
     const [loading,setLoading] = useState(true)
