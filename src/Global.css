@@ -223,7 +223,7 @@ hr{
 }
 /* OrderFilters Styles */
 .filterCards{
-    position: absolute;
+    position: relative;
     width : 12rem;
     margin : 1.25rem auto;
 }
