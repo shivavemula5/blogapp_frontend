@@ -70,7 +70,17 @@ const Profile = () => {
                 <h1 className='profileHeading'>{localStorage.getItem('name')}</h1>
                 <hr/>
                 <h2>My posts</h2>
-                <MyPosts handleClickDelete={handleClickDelete} data={data}/>
+                <section className='overallMyPosts'>
+                    <section className='mainPosts'>
+                        {
+                            data ? (data.map( (post) => (
+                                    <div key={post.id}>
+                                        <BlogPostAbstractWithUserActions handleClickDelete = {handleClickDelete} posts={post} />
+                                    </div>))):
+                                <></>
+                        }
+                    </section>
+                </section>
             </section>
             <section className='profileImageSection'>
                 <img className='profileImage' src={user} alt='user profile' />
