@@ -28,7 +28,7 @@ const AccountsApi = ({children}) => {
                 toast(`server error: ${response.status}`)
                 throw new Error('some error has occurred')
             }
-            console.log(response)
+            console.log(response,response.text())
             const json = response.status !== 204  ? await response.json() : null
             console.log(json)
             if(json && response.status===400){
