@@ -35,7 +35,7 @@ const Profile = () => {
         }
         response()
         setLoading(false)
-    },[data])
+    })
 
     if(loading){
         return (
