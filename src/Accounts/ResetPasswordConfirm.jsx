@@ -38,8 +38,10 @@ const ResetPasswordConfirm = () => {
             setConfirmPassword(e.target.value)
     } 
 
-    const handleSubmit = (e,uid,token,password,confirmpassword,callback=()=>{return navigate('/password/reset/done')}) => {
-        handleResetPasswordConfirm(e,uid,token,password,confirmpassword,callback)
+    const handleSubmit = (e,uid,token,password,confirmpassword,callback=()=>(navigate('/password/reset/done'))) => {
+        e.preventDefault()
+        console.log(uid,token,password,confirmpassword)
+        handleResetPasswordConfirm(uid,token,password,confirmpassword,callback)
     }
 
     return ( 
