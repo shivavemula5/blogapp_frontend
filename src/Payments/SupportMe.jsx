@@ -13,7 +13,7 @@ const SupportMe = () => {
                         Buy me coffee , your gratitude means a lot to me 
                         <span className='supportMePrice'>$20</span>      
                     </Card.Text>
-                    <form action={`https://blogapp-frontend-8los.onrender.com/api/stripe/create-checkout-session/`} method="POST">
+                    <form action={`https://blogapp-frontend-8los.onrender.com/api/stripe/create-checkout-session`} method="POST">
                         <Button variant='primary' type="submit">Checkout</Button>
                     </form>
                 </Card.Body>

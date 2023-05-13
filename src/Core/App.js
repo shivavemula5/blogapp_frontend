@@ -49,6 +49,7 @@ const App = () => {
                             <Route path='/activate/:uid/:token' element={<AccountActivation/>} />
                             <Route path='/account/activation/done' element={<AccountActivationDone/>} />
                             <Route path='/resend/activation/link' element={<ResendActivationMail/>} />
+                            
                             <Route path='/support/me' element={<SupportMe/>} /> 
                             <Route path='/acknowledge/payment' element={<AcknowledgePayment/>} />
                             
