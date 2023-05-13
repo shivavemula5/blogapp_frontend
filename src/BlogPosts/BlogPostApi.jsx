@@ -20,6 +20,8 @@ const BlogPostApi = ({children}) => {
                     Authorization : token ? `Token ${token}` :'',
                     "content-type" : "application/json",
                     "X-CSRFToken" : getCookie("csrftoken"),
+                    'Access-Control-Request-Method': '*',
+                    'Access-Control-Request-Headers': 'Content-Type',
                 },
                 body : method!=='DELETE'&& method!=='GET' ? JSON.stringify(data) : null
             })
@@ -60,7 +62,7 @@ const BlogPostApi = ({children}) => {
     /* Create Post => PRIVATE */
     const handleCreatePost = async(image,title,content,time,callback) => {
             setLoading(true)
-            const path = 'https://blogapp-3f83.onrender.com/api/posts/'
+            const path = 'https://blogapp-backend.herokuapp.com/api/posts/'
             const method = 'POST'
             const data = {'image':image, 'title':title, 'body':content,'time_required':time}
             const message = await Request(path,{data:data, method:method})
@@ -76,14 +78,14 @@ const BlogPostApi = ({children}) => {
 
     /* Get Post =>  PUBLIC */
     const handleGetPosts = () => {
-        const path = 'https://blogapp-3f83.onrender.com/api/posts/'
+        const path = 'https://blogapp-backend.herokuapp.com/api/posts/'
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }   
 
     /* Delete Post => PRIVATE */
     const handleDeletePosts = async(post) => {
-        const path = `https://blogapp-3f83.onrender.com/api/posts/${post.id}/`
+        const path = `https://blogapp-backend.herokuapp.com/api/posts/${post.id}/`
         const method = 'DELETE'
         const message = await Request(path,{data:null, method:method})
         if(message)
@@ -93,21 +95,21 @@ const BlogPostApi = ({children}) => {
 
     /* User Posts => PRIVATE */
     const handleMyPostSummary = () => {
-        const path = 'https://blogapp-3f83.onrender.com/api/my/postsummary/'
+        const path = 'https://blogapp-backend.herokuapp.comapi/my/postsummary/'
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* User Saved Posts => PRIVATE */
     const handleMySavedPostSummary = () => {
-        const path = 'https://blogapp-3f83.onrender.com/api/my/saved/postsummary/'
+        const path = 'https://blogapp-backend.herokuapp.com/api/my/saved/postsummary/'
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }   
 
     /* User Liked Posts => PRIVATE */
     const handleMyLikedPostSummary = () => {
-        const path = 'https://blogapp-3f83.onrender.com/api/my/liked/postsummary/'
+        const path = 'https://blogapp-backend.herokuapp.com/api/my/liked/postsummary/'
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
