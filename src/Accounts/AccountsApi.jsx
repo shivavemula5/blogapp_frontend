@@ -1,7 +1,7 @@
- import React, { createContext, useState } from 'react'
+import React, { createContext, useState } from 'react'
 import getCookie from '../HelperClasses/CSRFHelper'
-import {toast} from 'react-toastify'
 import { Spinner } from 'react-bootstrap'
+import { toast } from 'react-toastify'
 
 export const AuthTokenContext = createContext()
 

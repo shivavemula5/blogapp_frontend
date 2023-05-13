@@ -1,9 +1,9 @@
 import React from 'react'
-import { Card  } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 import LikeSymbol from './LikeSymbol'
 import CommentSymbol from './CommentSymbol'
 import CommentForm from './CommentForm'
-import {  useLocation, useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 
 const BlogPostDetail = () => {
 
@@ -48,7 +48,7 @@ const BlogPostDetail = () => {
                 <CommentForm postId={id} />
             </section>
         </section>
-     );
+     )
 }
  
 export default BlogPostDetail

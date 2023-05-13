@@ -4,8 +4,6 @@ import Form from 'react-bootstrap/Form'
 import { AuthTokenContext } from './AccountsApi'
 import { Link, useNavigate } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
-import { toast } from 'react-toastify'
-
 
 const Register = () => {
 
