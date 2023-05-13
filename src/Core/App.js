@@ -38,19 +38,19 @@ const App = () => {
                         <Routes>
                             <Route path='' element= {<Home/>} />
 
-                            <Route path='https://blogapp-3f83.onrender.com/register' element={<Register/>} />
-                            <Route path='https://blogapp-3f83.onrender.com/login' element={<Login />} />
-                            <Route path='https://blogapp-3f83.onrender.com/logout' element={<Logout />} />
-                            <Route path='https://blogapp-3f83.onrender.com/profile' element={<PrivateRoute><Profile/></PrivateRoute>} />
-                            <Route path='https://blogapp-3f83.onrender.com/password/reset' element={<ResetPassword/>} />
-                            <Route path='https://blogapp-3f83.onrender.com/password/reset/confirm/:uid/:token' element={<ResetPasswordConfirm/>}/>
-                            <Route path='https://blogapp-3f83.onrender.com/password/reset/done' element={<ResetPasswordDone/>} />
-                            <Route path='https://blogapp-3f83.onrender.com/password/change' element={<PrivateRoute><ChangePassword/></PrivateRoute>} />
-                            <Route path='https://blogapp-3f83.onrender.com/activate/:uid/:token' element={<AccountActivation/>} />
-                            <Route path='https://blogapp-3f83.onrender.com/account/activation/done' element={<AccountActivationDone/>} />
-                            <Route path='https://blogapp-3f83.onrender.com/resend/activation/link' element={<ResendActivationMail/>} />
-                            <Route path='https://blogapp-3f83.onrender.com/support/me' element={<SupportMe/>} /> 
-                            <Route path='https://blogapp-3f83.onrender.com/acknowledge/payment' element={<AcknowledgePayment/>} />
+                            <Route path='/register' element={<Register/>} />
+                            <Route path='/login' element={<Login />} />
+                            <Route path='/logout' element={<Logout />} />
+                            <Route path='/profile' element={<PrivateRoute><Profile/></PrivateRoute>} />
+                            <Route path='/password/reset' element={<ResetPassword/>} />
+                            <Route path='/password/reset/confirm/:uid/:token' element={<ResetPasswordConfirm/>}/>
+                            <Route path='/password/reset/done' element={<ResetPasswordDone/>} />
+                            <Route path='/password/change' element={<PrivateRoute><ChangePassword/></PrivateRoute>} />
+                            <Route path='/activate/:uid/:token' element={<AccountActivation/>} />
+                            <Route path='/account/activation/done' element={<AccountActivationDone/>} />
+                            <Route path='/resend/activation/link' element={<ResendActivationMail/>} />
+                            <Route path='/support/me' element={<SupportMe/>} /> 
+                            <Route path='/acknowledge/payment' element={<AcknowledgePayment/>} />
                             
                             <Route path='/blogpost/create' element={<BlogPostCreate/>} />
                             <Route path='/blogpost/list' element={<BlogPostList/>} />
@@ -62,7 +62,7 @@ const App = () => {
                         </Routes>
                     </Layout>
                 </BrowserRouter>
-                <ToastContainer />
+                <ToastContainer/>
             </BlogPostApi>
         </AccountsApi>
      ); 
