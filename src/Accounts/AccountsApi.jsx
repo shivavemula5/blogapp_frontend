@@ -18,9 +18,10 @@ const AccountsApi = ({children}) => {
                 method ,
                 headers : {
                     Authorization : token ? `Token ${token}` :'',
-                    mode: 'no-cors',
                     "content-type" : "application/json",
                     "X-CSRFToken" : getCookie("csrftoken"),
+                    'Access-Control-Request-Method': 'POST',
+                    'Access-Control-Request-Headers': 'Content-Type',
                 },
                 body : method !== 'DELETE' && method !== 'GET' ? JSON.stringify(data) :null  
             })
