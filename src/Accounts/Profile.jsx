@@ -14,7 +14,7 @@ const Profile = () => {
     const {handleProfile} = value 
     const {values} = useContext(BlogPostContext)
     const {handleDeletePosts,handleMyPostSummary} = values
-    const [data,setMyPosts] = useState([])
+    const [posts,setMyPosts] = useState([])
     const followers = ['ram','shiva','vemula','dullu','ranjan']
     const [loading,setLoading] = useState(true)
 
@@ -35,7 +35,7 @@ const Profile = () => {
         }
         response()
         setLoading(false)
-    })
+    },[posts])
 
     if(loading){
         return (
@@ -46,9 +46,9 @@ const Profile = () => {
 
         const handleClickDelete = (e,post) => {
             e.preventDefault()
-            const oldData = data
+            const oldData = posts
             const response = async() => {
-                const newPosts = data.filter(post =>(
+                const newPosts = posts.filter(post =>(
                     post.id!==postid
                 ))
                 setMyPosts(newPosts)
@@ -73,7 +73,7 @@ const Profile = () => {
                 <section className='overallMyPosts'>
                     <section className='mainPosts'>
                         {
-                            data ? (data.map( (post) => (
+                            posts ? (posts.map( (post) => (
                                     <div key={post.id}>
                                         <BlogPostAbstractWithUserActions handleClickDelete = {handleClickDelete} posts={post} />
                                     </div>))):
