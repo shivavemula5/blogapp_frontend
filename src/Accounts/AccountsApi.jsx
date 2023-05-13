@@ -20,7 +20,7 @@ const AccountsApi = ({children}) => {
                     Authorization : token ? `Token ${token}` :'',
                     "content-type" : "application/json",
                     "X-CSRFToken" : getCookie("csrftoken"),
-                    'Access-Control-Request-Method': 'POST',
+                    'Access-Control-Request-Method': '*',
                     'Access-Control-Request-Headers': 'Content-Type',
                 },
                 body : method !== 'DELETE' && method !== 'GET' ? JSON.stringify(data) :null  
@@ -60,7 +60,7 @@ const AccountsApi = ({children}) => {
 
     const handleRegister = async(name,email,password,re_password,callback) => {
         setLoading(true)
-        const path = '/auth/users/'
+        const path = 'https://blogapp-backend.herokuapp.com/auth/users/'
         const data = {'name':name,'email':email, 'password':password,'re_password':re_password}
         const method = 'POST'
         const message = await Request(path,{data:data,method:method})
@@ -103,7 +103,7 @@ const AccountsApi = ({children}) => {
 
     const handleProfile = async() => {
         setLoading(true)
-        const path = '/auth/users/me/'
+        const path = 'https://blogapp-3f83.onrender.com/auth/users/me/'
         const method = 'GET'
         const message = await Request(path,{data:null,method})
         if(handleError(message))
@@ -117,7 +117,7 @@ const AccountsApi = ({children}) => {
     
     const handleResetPassword = async (email) => {
         setLoading(true)
-        const path = '/auth/users/reset_password/'
+        const path = 'https://blogapp-3f83.onrender.com/auth/users/reset_password/'
         const data = {'email':email}
         const method = 'POST'
         const message = await Request(path,{data:data,method: method})
@@ -131,7 +131,7 @@ const AccountsApi = ({children}) => {
     
     const handleResetPasswordConfirm = async(emailUid,emailToken,password,confirmpassword,callback) => {
         setLoading(true)
-        const path = '/auth/users/reset_password_confirm/'
+        const path = 'https://blogapp-3f83.onrender.com/auth/users/reset_password_confirm/'
         const data = {'uid':emailUid,'token':emailToken,'new_password':password,'re_new_password':confirmpassword}
         const method = 'POST'
         const message = await Request(path,{data:data,method: method})
@@ -146,7 +146,7 @@ const AccountsApi = ({children}) => {
 
     const handleChangePassword = async(currentpassword,password,confirmpassword) => {
         setLoading(true)
-        const path = '/auth/users/set_password/'
+        const path = 'https://blogapp-3f83.onrender.com/auth/users/set_password/'
         const data = {'current_password':currentpassword,'new_password':password,'re_new_password':confirmpassword}
         const method = 'POST'
         const message = await Request(path,{data:data,method:method})
@@ -161,7 +161,7 @@ const AccountsApi = ({children}) => {
 
     const handleActivation = async(uid,token,callback) => {
         setLoading(true)
-        const path = '/auth/users/activation/'
+        const path = 'https://blogapp-3f83.onrender.com/auth/users/activation/'
         const data = {'uid':uid, 'token':token}
         const method = 'POST'
         const message = await Request(path,{data:data,method:method})
@@ -175,7 +175,7 @@ const AccountsApi = ({children}) => {
 
     const handleResendActivation = async(email) => {
         setLoading(true)
-        const path = '/auth/users/resend_activation/'
+        const path = 'https://blogapp-3f83.onrender.com/auth/users/resend_activation/'
         const data= {'email':email }
         const method = 'POST'
         const message = await Request(path,{data:data,method:method})

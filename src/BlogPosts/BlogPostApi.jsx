@@ -60,7 +60,7 @@ const BlogPostApi = ({children}) => {
     /* Create Post => PRIVATE */
     const handleCreatePost = async(image,title,content,time,callback) => {
             setLoading(true)
-            const path = '/api/posts/'
+            const path = 'https://blogapp-3f83.onrender.com/api/posts/'
             const method = 'POST'
             const data = {'image':image, 'title':title, 'body':content,'time_required':time}
             const message = await Request(path,{data:data, method:method})
@@ -76,14 +76,14 @@ const BlogPostApi = ({children}) => {
 
     /* Get Post =>  PUBLIC */
     const handleGetPosts = () => {
-        const path = '/api/posts/'
+        const path = 'https://blogapp-3f83.onrender.com/api/posts/'
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }   
 
     /* Delete Post => PRIVATE */
     const handleDeletePosts = async(post) => {
-        const path = `/api/posts/${post.id}/`
+        const path = `https://blogapp-3f83.onrender.com/api/posts/${post.id}/`
         const method = 'DELETE'
         const message = await Request(path,{data:null, method:method})
         if(message)
@@ -93,42 +93,42 @@ const BlogPostApi = ({children}) => {
 
     /* User Posts => PRIVATE */
     const handleMyPostSummary = () => {
-        const path = '/api/my/postsummary/'
+        const path = 'https://blogapp-3f83.onrender.com/api/my/postsummary/'
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* User Saved Posts => PRIVATE */
     const handleMySavedPostSummary = () => {
-        const path = '/api/my/saved/postsummary/'
+        const path = 'https://blogapp-3f83.onrender.com/api/my/saved/postsummary/'
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }   
 
     /* User Liked Posts => PRIVATE */
     const handleMyLikedPostSummary = () => {
-        const path = '/api/my/liked/postsummary/'
+        const path = 'https://blogapp-3f83.onrender.com/api/my/liked/postsummary/'
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* User Saved Posts => PRIVATE */
     const handleMySavedPostSummaryId = () => {
-        const path = '/api/my/saved/postsummary/id/'
+        const path = 'https://blogapp-3f83.onrender.com/api/my/saved/postsummary/id/'
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }   
 
     /* User Liked Posts => PRIVATE */
     const handleMyLikedPostSummaryId = () => {
-        const path = '/api/my/liked/postsummary/id/'
+        const path = 'https://blogapp-3f83.onrender.com/api/my/liked/postsummary/id/'
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* Comments  PRIVATE  */
     const handlePostComments = (postid,comment) => {
-        const path = `/api/posts/${postid}/comments/`
+        const path = `https://blogapp-3f83.onrender.com/api/posts/${postid}/comments/`
         const method = 'POST'
         const data = {'post':postid, 'comment':comment}
         return Request(path,{data:data, method:method})
@@ -136,42 +136,42 @@ const BlogPostApi = ({children}) => {
 
     /* Comments  PUBLIC */ 
     const handleGetComments = (postid) => {
-        const path = `/api/posts/${postid}/comments/`
+        const path = `https://blogapp-3f83.onrender.com/api/posts/${postid}/comments/`
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* Sorting  => PUBLIC */
     const handleSearchByTitle = (title) => {
-        const path = `/api/posts/?search=${title}`
+        const path = `https://blogapp-3f83.onrender.com/api/posts/?search=${title}`
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* Sorting  => PUBLIC */
     const HandleCreatedAscending = (field) => {
-        const path = `/api/posts/?ordering=${field}`
+        const path = `https://blogapp-3f83.onrender.com/api/posts/?ordering=${field}`
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* Sorting  => PUBLIC */    
     const HandleCreatedDescending = (field) => {
-        const path = `/api/posts/?ordering=${field}`
+        const path = `https://blogapp-3f83.onrender.com/api/posts/?ordering=${field}`
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* Sorting  => PUBLIC */    
     const HandleTimeRequiredAscending = (field) => {
-        const path = `/api/posts/?ordering=${field}`
+        const path = `https://blogapp-3f83.onrender.com/api/posts/?ordering=${field}`
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
 
     /* Sorting  => PUBLIC */    
     const HandleTimeRequiredDescending = (field) => {
-        const path = `/api/posts/?ordering=${field}`
+        const path = `https://blogapp-3f83.onrender.com/api/posts/?ordering=${field}`
         const method = 'GET'
         return Request(path,{data:null, method:method})
     }
@@ -179,7 +179,7 @@ const BlogPostApi = ({children}) => {
     /* Handle Reactions => PRIVATE */
     const HandleSavedPosts = async(postid) => {
         const userid = localStorage.getItem('id')
-            const path = `/api/users/${userid}/saved_posts/`
+            const path = `https://blogapp-3f83.onrender.com/api/users/${userid}/saved_posts/`
             const method = 'POST'
             const data = {"saved":true,"user":userid,"post":postid}
             const message = await Request(path,{data:data,method:method})
@@ -190,7 +190,7 @@ const BlogPostApi = ({children}) => {
     /* Handle Reactions => PRIVATE */
     const HandleLikedPosts = async(postid) => {
         const userid = localStorage.getItem('id')
-        const path = `/api/users/${userid}/liked_posts/`
+        const path = `https://blogapp-3f83.onrender.com/api/users/${userid}/liked_posts/`
         const method = 'POST'
         const data = {"liked":true,"user":userid,"post":postid}
         const message = await Request(path,{data:data,method:method})
@@ -200,19 +200,19 @@ const BlogPostApi = ({children}) => {
 
     /*Count Reactions => PUBLIC */
     const getLikeCountForPost = (postid) => {
-        const path = `/api/getlikesforpost/${postid}/`
+        const path = `https://blogapp-3f83.onrender.com/api/getlikesforpost/${postid}/`
         const method = 'GET'
         return Request(path,{data:null,method:method})
     }
     /*Count Reactions => PUBLIC */
     const getCommentCountForPost = (postid) => {
-        const path = `/api/getcommentsforpost/${postid}/`
+        const path = `https://blogapp-3f83.onrender.com/api/getcommentsforpost/${postid}/`
         const method = 'GET'
         return Request(path,{data:null,method:method})
     }
     /*Count Reactions => PUBLIC */
     const getSaveCountForPost = (postid) => {
-        const path = `/api/getsavedcountforpost/${postid}/`
+        const path = `https://blogapp-3f83.onrender.com/api/getsavedcountforpost/${postid}/`
         const method = 'GET'
         return Request(path,{data:null,method:method})
     }
